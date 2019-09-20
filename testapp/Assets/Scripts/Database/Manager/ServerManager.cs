@@ -9,7 +9,8 @@ public static partial class ServerManager
     public static DatabaseReference ConnectionReference;
     
     // Database settings.
-    public static readonly string DATABASE_URL = "https://testbase-a8cea.firebaseio.com/";
+    private static readonly string DATABASE_URL = "https://testbase-a8cea.firebaseio.com/";
+    internal static readonly string TABLE_NAME = "Leaders";
     
     /// <summary>
     /// Initialize database.
@@ -17,13 +18,13 @@ public static partial class ServerManager
     public static void InitDatabase()
     {
         // Check dependencies.
-        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => 
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => 
         {
             // Cache Status.
             var dependencyStatus = task.Result;
 
             // Firebase available?
-            if (dependencyStatus == Firebase.DependencyStatus.Available) // Yes.
+            if (dependencyStatus == DependencyStatus.Available) // Yes.
             {
                 // Output successful.
                 Debug.Log("Firebase available!");
@@ -31,6 +32,9 @@ public static partial class ServerManager
                 // Set Firebase instance.
                 FirebaseApp.DefaultInstance.SetEditorDatabaseUrl(DATABASE_URL);
                 ConnectionReference = FirebaseDatabase.DefaultInstance.RootReference;
+                
+                // ToDo: Get the last id.
+                ServerManager.GetTableValues();
             }
             else // No.
             {
