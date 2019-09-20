@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "916975585494",
+    "firebase_url": "https://testbase-a8cea.firebaseio.com",
+    "project_id": "testbase-a8cea",
+    "storage_bucket": "testbase-a8cea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916975585494:android:ce63718631f7ca8f6ae177",
+        "android_client_info": {
+          "package_name": "de.divinus41.testbase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916975585494-b29jaocobufskgiss213aitb3pnmnd59.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUpxUOMIRE2RLc_IwkHl8aSyJ5DkPKylE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916975585494-b29jaocobufskgiss213aitb3pnmnd59.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
